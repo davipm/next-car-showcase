@@ -11,6 +11,18 @@
   font-family: "Manrope", sans-serif;
 }
 
+.padding-x {
+  @apply sm:px-16 px-16;
+}
+
+.padding-y {
+  @apply py-4;
+}
+
+.max-width {
+  @apply max-w-[1440px] mx-auto;
+}
+
 .custom-btn {
   @apply flex flex-row justify-center items-center py-3 px-6 outline-none;
 }
@@ -37,4 +49,8 @@
 
 .hero__image-overlay {
   @apply absolute xl:-top-24 xl:-right-1/2 -right-1/4 bg-hero-bg bg-repeat-round -z-10 w-full xl:h-screen h-[590px] overflow-hidden;
+}
+
+.home__text-container {
+  @apply flex flex-col items-start justify-start gap-y-2.5 text-black-100;
 }
