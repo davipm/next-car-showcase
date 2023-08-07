@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import Searchbar from "@/components/Searchbar";
 
 export default function Home() {
   return (
@@ -9,6 +10,10 @@ export default function Home() {
         <div className="home__text-container">
           <h1 className="text-4xl font-extrabold">Car Catalogue</h1>
           <p>Explore out cars you might like</p>
+        </div>
+
+        <div className="home__filters">
+          <Searchbar />
         </div>
       </div>
     </main>
