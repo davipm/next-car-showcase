@@ -31,6 +31,7 @@ export default function Searchbar() {
     manufacturer: string | null,
   ) {
     const searchParams = new URLSearchParams(window.location.search);
+    const { pathname } = window.location;
 
     const updateSearchParam = (key: string, value: string | null) => {
       return value ? searchParams.set(key, value) : searchParams.delete(key);
@@ -39,9 +40,7 @@ export default function Searchbar() {
     updateSearchParam("model", model);
     updateSearchParam("manufacturer", manufacturer);
 
-    const newPathname = `${
-      window.location.pathname
-    }?${searchParams.toString()}`;
+    const newPathname = `${pathname}?${searchParams.toString()}`;
     router.push(newPathname, { scroll: false });
   }
 
