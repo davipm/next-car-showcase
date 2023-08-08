@@ -16,3 +16,10 @@ export async function fetchCars(filters: FilterProps): Promise<CarsProps[]> {
 
   return await response.json();
 }
+
+export function updateSearchParams(type: string, value: string) {
+  const { search, pathname } = window.location;
+  const searchParams = new URLSearchParams(search);
+  searchParams.set(type, value);
+  return `${pathname}?${searchParams.toString()}`;
+}

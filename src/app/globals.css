@@ -19,6 +19,10 @@
   @apply py-4;
 }
 
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
 .max-width {
   @apply max-w-[1440px] mx-auto;
 }

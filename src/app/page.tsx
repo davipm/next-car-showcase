@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import Searchbar from "@/components/Searchbar";
+import ShowMore from "@/components/ShowMore";
 import { HomeProps } from "@/@types";
 import { fetchCars } from "@/utils";
 
@@ -41,7 +42,10 @@ export default async function Home({ searchParams }: HomeProps) {
               ))}
             </div>
 
-            <div />
+            <ShowMore
+              pageNumber={(searchParams.limit || 10) / 10}
+              isNext={(searchParams.limit || 10) > allCars.length}
+            />
           </section>
         ) : (
           <div className="home__error-container">
