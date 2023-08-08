@@ -1,7 +1,7 @@
 "use client";
 
-import { CustomButtonProps } from "@/@types";
 import Image from "next/image";
+import { CustomButtonProps } from "@/@types";
 
 export default function CustomButton({
   handleClick,

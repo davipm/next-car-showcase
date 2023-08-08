@@ -43,7 +43,6 @@ describe("fetchCars", () => {
 
     const expectedUrl =
       "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=Toyota&year=2023&model=Corolla&limit=10&fuel_type=Gasoline";
-
     const expectedHeaders = {
       "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPID_API_KEY || "",
       "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
@@ -58,7 +57,6 @@ describe("fetchCars", () => {
     const filters = {
       manufacturer: "Toyota",
     };
-
     const result = await fetchCars(filters);
 
     expect(result).toEqual(mockApiResponse);
@@ -82,9 +80,7 @@ describe("updateSearchParams", () => {
   it("updates the search params correctly", () => {
     const type = "param1";
     const value = "updatedValue";
-
     const updatedUrl = updateSearchParams(type, value);
-
     const expectedUrl = "/test?param1=updatedValue&param2=value2";
 
     expect(updatedUrl).toEqual(expectedUrl);
@@ -93,9 +89,7 @@ describe("updateSearchParams", () => {
   it("adds a new search param when it doesn't exist", () => {
     const type = "newParam";
     const value = "newValue";
-
     const updatedUrl = updateSearchParams(type, value);
-
     const expectedUrl = "/test?param1=value1&param2=value2&newParam=newValue";
 
     expect(updatedUrl).toEqual(expectedUrl);
