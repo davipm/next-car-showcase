@@ -16,7 +16,7 @@ export default function Footer() {
             className="object-contain"
           />
           <p className="text-base text-gray-700">
-            Carhub 2023 <br />
+            CarHub 2023 <br />
             All Rights Reserved &copy;
           </p>
         </div>
@@ -30,7 +30,7 @@ export default function Footer() {
                   <Link
                     key={link.title}
                     href={link.url}
-                    className="text-gray-500"
+                    className="footer__link-item"
                   >
                     {link.title}
                   </Link>
@@ -45,10 +45,10 @@ export default function Footer() {
         <p>@2023 CarHub. All rights reserved</p>
 
         <div className="footer__copyrights-links">
-          <Link href="/" className="text-gray-500">
+          <Link href="/" className="footer__link-item">
             Privacy & Policy
           </Link>
-          <Link href="/" className="text-gray-500">
+          <Link href="/" className="footer__link-item">
             Privacy & Policy
           </Link>
         </div>

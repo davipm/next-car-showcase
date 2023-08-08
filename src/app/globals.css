@@ -11,6 +11,10 @@
   font-family: "Manrope", sans-serif;
 }
 
+::selection {
+  @apply bg-primary-blue text-white;
+}
+
 .padding-x {
   @apply sm:px-16 px-16;
 }
@@ -109,6 +113,10 @@
 
 .footer__link {
   @apply flex flex-col gap-6 text-base min-w-[170px];
+}
+
+.footer__link-item {
+  @apply text-gray-500 transition duration-150 ease-in-out hover:text-blue-950;
 }
 
 .footer__copyrights-links {
