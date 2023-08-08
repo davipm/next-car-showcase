@@ -55,6 +55,4 @@ describe("CustomButton", () => {
     const buttonElement = getByTestId("custom-button");
     expect(buttonElement).toBeDisabled();
   });
-
-  // Add more tests as needed
 });
