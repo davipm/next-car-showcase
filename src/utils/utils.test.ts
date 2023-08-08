@@ -1,4 +1,4 @@
-import { fetchCars } from "@/utils/index";
+import { fetchCars, updateSearchParams } from "@/utils/index";
 
 const mockApiResponse = [
   {
@@ -65,4 +65,39 @@ describe("fetchCars", () => {
   });
 
   // Add more tests for error handling, edge cases, etc.
+});
+
+describe("updateSearchParams", () => {
+  beforeAll(() => {
+    // Mock the window.location object
+    Object.defineProperty(window, "location", {
+      value: {
+        search: "?param1=value1&param2=value2",
+        pathname: "/test",
+      },
+      writable: true,
+    });
+  });
+
+  it("updates the search params correctly", () => {
+    const type = "param1";
+    const value = "updatedValue";
+
+    const updatedUrl = updateSearchParams(type, value);
+
+    const expectedUrl = "/test?param1=updatedValue&param2=value2";
+
+    expect(updatedUrl).toEqual(expectedUrl);
+  });
+
+  it("adds a new search param when it doesn't exist", () => {
+    const type = "newParam";
+    const value = "newValue";
+
+    const updatedUrl = updateSearchParams(type, value);
+
+    const expectedUrl = "/test?param1=value1&param2=value2&newParam=newValue";
+
+    expect(updatedUrl).toEqual(expectedUrl);
+  });
 });
