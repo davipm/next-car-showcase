@@ -5,7 +5,7 @@ import { footerLinks } from "@/constants";
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col text-black-100 mt-5 border-t border-gray-100">
+    <footer className="flex flex-col px-5 lg:px-0 text-black-100 mt-5 border-t border-gray-100">
       <div className="flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 py-10">
         <div className="flex flex-col justify-start items-start gap-6">
           <Image
@@ -16,7 +16,7 @@ export default function Footer() {
             className="object-contain"
           />
           <p className="text-base text-gray-700">
-            CarHub 2023 <br />
+            CarHub {new Date().getFullYear()} <br />
             All Rights Reserved &copy;
           </p>
         </div>
@@ -42,7 +42,7 @@ export default function Footer() {
       </div>
 
       <div className="flex justify-between items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-16 py-10">
-        <p>@2023 CarHub. All rights reserved</p>
+        <p>@{new Date().getFullYear()} CarHub. All rights reserved</p>
 
         <div className="footer__copyrights-links">
           <Link href="/" className="footer__link-item">

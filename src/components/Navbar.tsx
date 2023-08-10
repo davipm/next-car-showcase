@@ -6,7 +6,7 @@ import CustomButton from "@/components/CustomButton";
 export default function Navbar() {
   return (
     <div className="w-full absolute z-10">
-      <nav className="max-w-[1440px] mx-auto flex justify-between items-center sm:px-16 py-4 bg-transparent">
+      <nav className="max-w-[1440px] mx-auto flex justify-between items-center px-4 sm:px-16 py-4 bg-transparent">
         <Link href="/">
           <Image
             src="/logo.svg"
