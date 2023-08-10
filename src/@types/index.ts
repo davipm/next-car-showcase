@@ -46,3 +46,13 @@ export interface ShowMoreProps {
   pageNumber: number;
   isNext: boolean;
 }
+
+export interface OptionProps {
+  title: string;
+  value: string;
+}
+
+export interface CustomFilterProps {
+  title: "fuel" | "year";
+  options: OptionProps[];
+}

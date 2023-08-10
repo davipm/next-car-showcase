@@ -64,7 +64,7 @@
 }
 
 .home__filters {
-  @apply mt-12 w-full justify-between items-center flex-wrap gap-5;
+  @apply mt-12 w-full flex justify-between items-center flex-wrap gap-5;
 }
 
 .home__filter-container {
@@ -121,4 +121,12 @@
 
 .footer__copyrights-links {
   @apply flex-1 flex sm:justify-end justify-center max-sm:mt-4 gap-10;
+}
+
+.custom-filter__btn {
+  @apply relative w-full min-w-[127px] flex justify-between items-center;
+}
+
+.custom-filter__options {
+  @apply absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
 }
