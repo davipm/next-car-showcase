@@ -40,6 +40,7 @@ export interface CarsProps {
   model: string;
   transmission: string;
   year: number;
+  angle?: string;
 }
 
 export interface ShowMoreProps {
