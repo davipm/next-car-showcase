@@ -11,7 +11,7 @@ const mockProps: CustomButtonProps = {
   textStyles: "test-text",
   btnType: "button",
   title: "Test Button",
-  rightIcon: "test-icon.png",
+  rightIcon: "/test-icon.png",
   isDisabled: false,
 };
 

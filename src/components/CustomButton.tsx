@@ -24,7 +24,7 @@ export default function CustomButton({
       {rightIcon && (
         <div className="relative w-6 h-6">
           <Image
-            src={`/${rightIcon}`}
+            src={rightIcon}
             alt="arrow_left"
             fill
             className="object-contain"
