@@ -6,23 +6,21 @@ import { useState } from "react";
 import { CarsProps } from "@/@types";
 import { calculateCarRent, generateCarImageUrl } from "@/utils";
 import CustomButton from "@/components/CustomButton";
+import CarDetails from "@/components/CarDetails";
 
-export default function CarCard({
-  make,
-  model,
-  city_mpg,
-  year,
-  transmission,
-  drive,
-}: CarsProps) {
-  const carRent = calculateCarRent(city_mpg, year);
+interface CarCardProps {
+  car: CarsProps;
+}
+
+export default function CarCard({ car }: CarCardProps) {
+  const carRent = calculateCarRent(car.city_mpg, car.year);
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="car-card group">
       <div className="car-card__content">
         <h2 className="car-card__content-title">
-          {make} {model}
+          {car.make} {car.model}
         </h2>
       </div>
 
@@ -38,7 +36,7 @@ export default function CarCard({
 
       <div className="relative flex w-full h-40 my-3 object-contain">
         <Image
-          src={generateCarImageUrl({ make, model, year })}
+          src={generateCarImageUrl(car)}
           alt="car model"
           fill
           priority
@@ -56,16 +54,16 @@ export default function CarCard({
               height={20}
             />
             <p className="car-card__icon-text">
-              {transmission === "a" ? "Automatic" : "Manual"}
+              {car.transmission === "a" ? "Automatic" : "Manual"}
             </p>
           </div>
           <div className="car-card__icon">
             <Image src="/tire.svg" alt="seat" width={20} height={20} />
-            <p className="car-card__icon-text">{drive.toUpperCase()}</p>
+            <p className="car-card__icon-text">{car.drive.toUpperCase()}</p>
           </div>
           <div className="car-card__icon">
             <Image src="/gas.svg" alt="seat" width={20} height={20} />
-            <p className="car-card__icon-text">{city_mpg} MPG</p>
+            <p className="car-card__icon-text">{car.city_mpg} MPG</p>
           </div>
         </div>
 
@@ -79,6 +77,12 @@ export default function CarCard({
           />
         </div>
       </div>
+
+      <CarDetails
+        isOpen={isOpen}
+        closeModal={() => setIsOpen(false)}
+        car={car}
+      />
     </div>
   );
 }
