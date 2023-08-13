@@ -15,7 +15,7 @@ const mockProps: CustomButtonProps = {
   isDisabled: false,
 };
 
-describe("CustomButton", () => {
+describe("<CustomButton />", () => {
   it("renders correctly with provided props", () => {
     const { getByText, getByAltText } = render(<CustomButton {...mockProps} />);
 

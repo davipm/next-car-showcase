@@ -36,13 +36,6 @@ export function calculateCarRent(city_mpg: number, year: number) {
   return rentalRatePerDay.toFixed(0);
 }
 
-interface GenerateCarImageUrlProps {
-  make: string;
-  model: string;
-  year: number;
-  angle?: string;
-}
-
 export const generateCarImageUrl = (car: CarsProps, angle?: string) => {
   const url = new URL("https://cdn.imagin.studio/getimage");
 
