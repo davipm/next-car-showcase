@@ -1,4 +1,4 @@
-import { fetchCars, updateSearchParams } from "@/utils/index";
+import { handleCarsApi, updateSearchParams } from "@/utils/index";
 
 const mockApiResponse = [
   {
@@ -39,7 +39,7 @@ describe("fetchCars", () => {
       limit: 10,
     };
 
-    await fetchCars(filters);
+    await handleCarsApi(filters);
 
     const expectedUrl =
       "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=Toyota&year=2023&model=Corolla&limit=10&fuel_type=Gasoline";
@@ -57,7 +57,7 @@ describe("fetchCars", () => {
     const filters = {
       manufacturer: "Toyota",
     };
-    const result = await fetchCars(filters);
+    const result = await handleCarsApi(filters);
 
     expect(result).toEqual(mockApiResponse);
   });

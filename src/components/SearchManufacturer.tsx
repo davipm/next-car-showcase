@@ -3,27 +3,29 @@ import { useState, Fragment } from "react";
 import { Combobox, Transition } from "@headlessui/react";
 
 import { manufacturers } from "@/constants";
-import { SearchManuFacturerProps } from "@/@types";
+import { SearchManufacturerProps } from "@/@types";
 
 export default function SearchManufacturer({
   manufacturer,
-  setManuFacturer,
-}: SearchManuFacturerProps) {
+  setManufacturer,
+}: SearchManufacturerProps) {
   const [query, setQuery] = useState("");
 
   const filteredManufacturers =
     query === ""
       ? manufacturers
-      : manufacturers.filter((item) =>
-          item
-            .toLowerCase()
-            .replace(/\s+/g, "")
-            .includes(query.toLowerCase().replace(/\s+/g, "")),
-        );
+      : manufacturers.filter((item) => hasSubstringIgnoreCase(item, query));
+
+  function hasSubstringIgnoreCase(str: string, substr: string) {
+    return str
+      .toLowerCase()
+      .replace(/\s+/g, "")
+      .includes(substr.toLowerCase().replace(/\s+/g, ""));
+  }
 
   return (
     <div className="search-manufacture">
-      <Combobox value={manufacturer} onChange={setManuFacturer}>
+      <Combobox value={manufacturer} onChange={setManufacturer}>
         <div className="relative w-full">
           <Combobox.Button className="absolute top-[14px]">
             <Image

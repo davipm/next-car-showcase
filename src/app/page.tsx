@@ -2,13 +2,13 @@ import Hero from "@/components/Hero";
 import Searchbar from "@/components/Searchbar";
 import ShowMore from "@/components/ShowMore";
 import { HomeProps } from "@/@types";
-import { fetchCars } from "@/utils";
+import { handleCarsApi } from "@/utils";
 import CustomFilter from "@/components/CustomFilter";
 import { fuels, yearsOfProduction } from "@/constants";
 import CarCard from "@/components/CarCard";
 
 export default async function Home({ searchParams }: HomeProps) {
-  const allCars = await fetchCars({
+  const allCars = await handleCarsApi({
     manufacturer: searchParams.manufacturer || "",
     year: searchParams.year || 2022,
     fuel: searchParams.fuel || "",

@@ -21,10 +21,9 @@ function SearchButton({ otherClasses }: { otherClasses: string }) {
 }
 
 export default function Searchbar() {
+  const router = useRouter();
   const [manufacture, setManufacture] = useState("");
   const [model, setModel] = useState("");
-
-  const router = useRouter();
 
   function updateSearchParams(
     model: string | null,
@@ -56,7 +55,7 @@ export default function Searchbar() {
       <div className="searchbar__item">
         <SearchManufacturer
           manufacturer={manufacture}
-          setManuFacturer={setManufacture}
+          setManufacturer={setManufacture}
         />
         <SearchButton otherClasses="sm:hidden" />
       </div>
